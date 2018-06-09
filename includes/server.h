@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tadey <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/08 15:05:23 by tadey             #+#    #+#             */
+/*   Updated: 2018/06/08 15:05:24 by tadey            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SERVER_H
 #define SERVER_H
 #include <stdio.h>
@@ -16,11 +28,15 @@
 #include <netinet/ip.h>
 #include "../libft/libft.h"
 
+#define FD_MAX 1024
+
 typedef struct s_server
 {
     int server_socket;
     int port;
     int ret_recv;
+	fd_set status;
+	fd_set current;
 }   t_server;
 
 
